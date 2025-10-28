@@ -1,0 +1,187 @@
+/* ===== Estilos base ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  display: flex;
+  height: 100vh;
+  background-color: #f6f7f9;
+  color: #1e293b;
+  transition: background 0.3s, color 0.3s;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* ===== Sidebar ===== */
+.sidebar {
+  width: 280px;
+  background-color: #0f172a;
+  color: #f1f5f9;
+  padding: 2rem 1.5rem;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.2);
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#theme-toggle {
+  background: none;
+  border: none;
+  color: #f1f5f9;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+#theme-toggle:hover {
+  transform: rotate(20deg);
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.5rem;
+}
+
+.sidebar nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+  display: block;
+  text-decoration: none;
+  color: #f1f5f9;
+  background: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.sidebar nav ul li a:hover {
+  background-color: #1e3a8a;
+}
+
+.sidebar nav ul li a.active {
+  background-color: #2563eb;
+  font-weight: 600;
+}
+
+/* ===== Contenido ===== */
+.content {
+  flex: 1;
+  padding: 2rem 3rem;
+  background-color: #f8fafc;
+  overflow-y: auto;
+  transition: background 0.3s, color 0.3s;
+}
+
+#markdown-content {
+  max-width: 900px;
+  line-height: 1.7;
+}
+
+/* ===== Paginación ===== */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.pagination button:hover {
+  background-color: #1d4ed8;
+}
+
+/* ===== Markdown: títulos ===== */
+#markdown-content h1, #markdown-content h2, #markdown-content h3 {
+  color: inherit;
+  margin-top: 1.5rem;
+}
+
+/* ===== Bloques de código ===== */
+#markdown-content pre {
+  background-color: #1e293b;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+#markdown-content code {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95em;
+  background-color: rgba(30, 41, 59, 0.9);
+  color: #e2e8f0;
+  border-radius: 4px;
+  padding: 2px 5px;
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* ===== Selección de texto ===== */
+::selection {
+  background: #2563eb;
+  color: #ffffff;
+}
+#markdown-content pre::selection,
+#markdown-content code::selection {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* ===== MODO OSCURO ===== */
+body.dark {
+  background-color: #0f172a;
+  color: #f1f5f9;
+}
+
+body.dark .sidebar {
+  background-color: #1e293b;
+  color: #e2e8f0;
+}
+
+body.dark .content {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+body.dark #markdown-content pre {
+  background-color: #0b1120;
+}
+
+body.dark #markdown-content code {
+  background-color: rgba(30, 41, 59, 0.9);
+  color: #e2e8f0;
+}
